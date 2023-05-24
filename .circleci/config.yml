@@ -29,6 +29,12 @@ jobs:
            sudo npm install -g mega-linter-runner
 
       - run:
+          name: Update Docker daemon configuration
+          command: |
+            echo 'export DOCKER_CLI_EXPERIMENTAL=enabled' >> $BASH_ENV
+            source $BASH_ENV           
+
+      - run:
           name: Run MegaLinter
           command: |
             npx mega-linter-runner --flavor python -e "ENABLE=DOCKERFILE,MARKDOWN,YAML" -e "SHOW_ELAPSED_TIME=true"
