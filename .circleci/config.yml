@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Run MegaLinter
           command: |
-            npx mega-linter-runner --flavor python -e "ENABLE=DOCKERFILE,MARKDOWN,YAML" -e "SHOW_ELAPSED_TIME=true" --nodockerpull
+            npx mega-linter-runner --flavor python -e "ENABLE=DOCKERFILE,MARKDOWN,YAML" -e "SHOW_ELAPSED_TIME=true"
    
   post:
    docker:
